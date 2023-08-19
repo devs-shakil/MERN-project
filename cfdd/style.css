@@ -277,13 +277,33 @@ h2{
 
   /* custom */
   .client-heading{
-    font-size:24px;
+    font-size:30px;
+    text-align:left;
   }
   .client-content{
     padding:0;
     margin:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
   }
   .clients{
     background: #ECECEC; 
     border-radius: 0px 0px 0px 250px; 
+  }
+
+  @media only screen and (max-width: 768px) {
+    .client-row{
+        flex-direction: column;
+    }
+    .client-content{
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .clients{
+        padding-top:10px !important;
+        border-radius: 0;
+    }
   }
