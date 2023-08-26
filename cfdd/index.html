@@ -10,6 +10,7 @@
    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
     <script src="./app.js"></script>
 </head>
@@ -181,6 +182,125 @@
        
     </div>
 </div>
+
+
+<!-- contact us section -->
+
+
+
+    
+
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {!! $contact->detail !!}
+                </div>
+            </div>
+            
+            <div class="row contact-form pt-5">
+                <div class="col-md-6">
+                    <div class="contact-address">
+                        <div class="contact-item d-flex">
+                            <div class="contact-icon col-2">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text col-10">
+                                <h4>Address</h4>
+                                <p>
+                                    {!! nl2br(e($contact->contact_address)) !!}
+                                </p>
+                            </div>
+                        </div>
+                 
+                   
+                        <div class="contact-item d-flex">
+                            <div class="contact-icon col-2">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text col-10">
+                                <h4>Phone Number</h4>
+                                <p>
+                                    {!! nl2br(e($contact->contact_phone)) !!}
+                                </p>
+                            </div>
+                        </div>
+                   
+                    
+                        <div class="contact-item d-flex">
+                            <div class="contact-icon col-2">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text col-10">
+                                <h4>Email Address</h4>
+                                <p>
+                                    {!! nl2br($contact->contact_email) !!}
+                                </p>
+                            </div>
+                        </div>
+                    </div>                                                             
+                </div>
+                <div class="col-md-6">
+                    <h4 class="contact-form-title mt_0 mb_20">Contact Form</h4>
+                    <form action="{{ route('front.contact_form') }}" method="post">
+                        @csrf
+                        <div class="row">
+                                <div class="form-group">
+                                    <label>Name (Required)</label>
+                                    <input type="text" class="form-control" name="visitor_name">
+                                </div>
+                           
+                            
+                                <div class="form-group">
+                                    <label>Email Address (Required)</label>
+                                    <input type="email" class="form-control" name="visitor_email">
+                                </div>
+                          
+                            
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="text" class="form-control" name="visitor_phone">
+                                </div>
+                          
+                        </div>
+                        <div class="form-group">
+                            <label>Message (Required)</label>
+                            <textarea name="visitor_message" class="form-control h-200" cols="20" rows="6"></textarea>
+                        </div>
+{{-- @php
+    dd($g_setting)
+@endphp --}}
+                        @if($g_setting->google_recaptcha_status == 'Show')
+                        <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="{{ $g_setting->google_recaptcha_site_key }}"></div>
+                        </div>
+                        @endif
+
+                        <button type="submit" class="btn btn-primary mt_10">Send Message</button>
+                    </form>
+                </div>
+               
+            </div>
+           
+            <div class="row">
+                <div class="container" style="width: 100%;">
+                    {!! $g_setting->company_location_map !!}
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- 
+    paragraph section
+ -->
+
+
+  
+  <p class="desktop-paragraph">This is the paragraph for desktop mode.</p>
+  <p class="mobile-paragraph">This is the paragraph for mobile mode.</p>
+  <button id="showMoreButton">Show More</button>
+
+
 <br><br> <br><br>
 </body>
 </html>

@@ -307,3 +307,107 @@ h2{
         border-radius: 0;
     }
   }
+
+
+
+  /* contact us */
+.contact-item{
+    padding: 26px 0;
+}
+.contact-item:hover{
+    border:1px solid red;
+    background: #C6312C;
+    color:white;
+    transition: 0.5s ease ease-in-out;
+}
+.contact-icon{
+    text-align: center;
+}
+
+.contact-icon img {
+	width: 40px;
+	height: 40px;
+}
+
+.contact-icon i {
+	font-size: 34px;
+    text-align: center;
+}
+
+.contact-text {
+	margin-top: 0px;
+}
+
+.contact-text h4 {
+	font-size: 18px;
+    font-weight: 700;
+	margin-bottom: 5px;
+}
+
+.contact-text p {
+	margin: 0;
+}
+
+.contact-form textarea {
+	height: 190px
+}
+
+.contact-form .btn {
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+	padding: 14px 30px;
+	border: 1px solid #810505;
+	background: #940606;
+	color: #fff;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+
+.map-area iframe {
+	width: 100%;
+	height: 450px;
+	margin-bottom: -5px;
+}
+
+h4.contact-form-title {
+	font-weight: 700;
+	font-size: 24px;
+}
+
+.contact-form {
+	margin-bottom: 50px;
+}
+
+.contact-form button {
+	background: #3867D6;
+	border: 2px solid #3867D6;
+	border-radius: 50px;
+	padding: 10px 30px;
+	display: inline-block;
+	color: #fff;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+
+
+
+/* show paragraph */
+.desktop-paragraph {
+    display: block;
+  }
+
+  .mobile-paragraph {
+    display: none;
+  }
+
+  #showMoreButton {
+    display: none;
+    cursor: pointer;
+  }
