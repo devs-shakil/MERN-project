@@ -399,15 +399,17 @@ h4.contact-form-title {
 
 
 /* show paragraph */
-.desktop-paragraph {
-    display: block;
+.hidden-paragraph {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
   }
-
-  .mobile-paragraph {
-    display: none;
+  
+  .show {
+    opacity: 1;
+    max-height: 1000px; /* Adjust this value based on your content */
+    transition: opacity 0.3s ease, max-height 0.3s ease;
   }
-
-  #showMoreButton {
-    display: none;
-    cursor: pointer;
-  }
+  
+  
